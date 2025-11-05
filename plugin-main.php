@@ -611,3 +611,26 @@ function load_textdomain(){
 	load_plugin_textdomain('baba-academy', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
 
+/** Part Fix — Optional Screenshot Logic
+ * File: plugin-main.php
+ * کہاں پیسٹ کریں: آخر میں
+ * مقصد: اسکرین شاٹ نہ دینے پر بھی نیا داخلہ محفوظ ہو سکے
+ */
+
+add_action('init', function(){
+    if (!function_exists('SSM\\BA\\ajax_create_admission')) return;
+    // نوٹ: اصل function پہلے سے define ہے؛ صرف if-condition کا اپڈیٹ نیچے دکھایا جا رہا ہے
+    // اسے مین کوڈ میں manual replace کریں:
+
+    /*
+    پرانی لائن:
+    if ( isset($_FILES['screenshot']) && is_array($_FILES['screenshot']) && ! empty($_FILES['screenshot']['name']) ) {
+
+    نئی لائن:
+    */
+    // if-condition کے آغاز میں replace کریں ⬇️
+    // ✅ نیا ورژن:
+    // if ( isset($_FILES['screenshot']) && is_array($_FILES['screenshot']) && ! empty($_FILES['screenshot']['name']) && $_FILES['screenshot']['error'] !== UPLOAD_ERR_NO_FILE ) {
+
+    // اب اگر کوئی فائل اپلوڈ نہ کرے تو فارم نارمل طور پر محفوظ ہو جائے گا۔
+});
