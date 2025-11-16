@@ -1,0 +1,616 @@
+/**
+ * Dashboard Styles - NUZ Online Academy Plugin
+ * Responsive dashboard layout with dark mode support
+ */
+
+/* Dashboard Container */
+#nuz-academy-dashboard {
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Dashboard Header */
+.nuz-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--nuz-border-color, #e5e7eb);
+}
+
+.nuz-dashboard-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--nuz-primary-color, #2563eb);
+}
+
+.nuz-dashboard-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Stats Grid */
+.nuz-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.nuz-stat-card {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nuz-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nuz-stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--nuz-primary-color, #2563eb), var(--nuz-secondary-color, #10b981));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nuz-stat-content {
+    flex: 1;
+}
+
+.nuz-stat-number {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--nuz-text-color, #1f2937);
+    line-height: 1;
+}
+
+.nuz-stat-label {
+    margin: 0;
+    color: var(--nuz-text-muted, #6b7280);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Dashboard Rows */
+.nuz-dashboard-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Section Headers */
+.nuz-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.nuz-section-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--nuz-text-color, #1f2937);
+}
+
+/* Chart Section */
+.nuz-chart-section {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nuz-chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nuz-select {
+    padding: 0.5rem;
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 6px;
+    background: var(--nuz-bg, #ffffff);
+    color: var(--nuz-text-color, #1f2937);
+    font-size: 0.9rem;
+}
+
+.nuz-chart-container {
+    position: relative;
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.nuz-chart-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background: var(--nuz-bg-secondary, #f9fafb);
+    border: 2px dashed var(--nuz-border-color, #e5e7eb);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nuz-placeholder-icon {
+    font-size: 3rem;
+    color: var(--nuz-text-muted, #6b7280);
+    margin-bottom: 1rem;
+}
+
+/* Recent Admissions Section */
+.nuz-recent-section {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nuz-view-all {
+    color: var(--nuz-primary-color, #2563eb);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nuz-view-all:hover {
+    color: var(--nuz-primary-hover, #1d4ed8);
+    text-decoration: underline;
+}
+
+/* Table Styles */
+.nuz-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nuz-table th {
+    background: var(--nuz-bg-secondary, #f9fafb);
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--nuz-text-color, #1f2937);
+    border-bottom: 2px solid var(--nuz-border-color, #e5e7eb);
+}
+
+.nuz-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--nuz-border-color, #e5e7eb);
+}
+
+.nuz-table tr:hover {
+    background: var(--nuz-bg-secondary, #f9fafb);
+}
+
+.nuz-student-info strong {
+    color: var(--nuz-text-color, #1f2937);
+}
+
+.nuz-text-muted {
+    color: var(--nuz-text-muted, #6b7280);
+    font-size: 0.8rem;
+}
+
+.nuz-status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nuz-status-active {
+    background: var(--nuz-success-light, #dcfce7);
+    color: var(--nuz-success-color, #16a34a);
+}
+
+.nuz-status-inactive {
+    background: var(--nuz-danger-light, #fee2e2);
+    color: var(--nuz-danger-color, #dc2626);
+}
+
+/* Upcoming Courses Section */
+.nuz-courses-section {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nuz-courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nuz-course-item {
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nuz-course-item:hover {
+    background: var(--nuz-bg-secondary, #f9fafb);
+}
+
+.nuz-course-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--nuz-text-color, #1f2937);
+}
+
+.nuz-course-description {
+    margin: 0 0 0.75rem 0;
+    color: var(--nuz-text-muted, #6b7280);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.nuz-course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.nuz-course-date {
+    color: var(--nuz-text-muted, #6b7280);
+}
+
+.nuz-course-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.nuz-upcoming {
+    background: var(--nuz-info-light, #dbeafe);
+    color: var(--nuz-info-color, #2563eb);
+}
+
+.nuz-starting-soon {
+    background: var(--nuz-warning-light, #fef3c7);
+    color: var(--nuz-warning-color, #d97706);
+}
+
+.nuz-started {
+    background: var(--nuz-success-light, #dcfce7);
+    color: var(--nuz-success-color, #16a34a);
+}
+
+/* Quick Actions Section */
+.nuz-actions-section {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nuz-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.nuz-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--nuz-bg-secondary, #f9fafb);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 8px;
+    color: var(--nuz-text-color, #1f2937);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nuz-action-btn:hover {
+    background: var(--nuz-primary-color, #2563eb);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* System Status */
+.nuz-system-status {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nuz-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nuz-status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--nuz-bg-secondary, #f9fafb);
+    border-radius: 6px;
+}
+
+.nuz-status-label {
+    font-weight: 500;
+    color: var(--nuz-text-color, #1f2937);
+}
+
+.nuz-status-value {
+    font-weight: 600;
+    color: var(--nuz-primary-color, #2563eb);
+}
+
+.nuz-status-ok {
+    color: var(--nuz-success-color, #16a34a);
+    font-weight: 600;
+}
+
+.nuz-status-error {
+    color: var(--nuz-danger-color, #dc2626);
+    font-weight: 600;
+}
+
+/* Loading States */
+.nuz-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.nuz-loading-content {
+    text-align: center;
+}
+
+.nuz-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--nuz-border-color, #e5e7eb);
+    border-top: 3px solid var(--nuz-primary-color, #2563eb);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.nuz-spinner.small {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+}
+
+.nuz-spinner.large {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nuz-loading {
+    text-align: center;
+    color: var(--nuz-text-muted, #6b7280);
+    font-style: italic;
+}
+
+.nuz-loading-row td {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Toast Notifications */
+.nuz-toast-container {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nuz-toast {
+    background: var(--nuz-card-bg, #ffffff);
+    border: 1px solid var(--nuz-border-color, #e5e7eb);
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nuz-toast-success {
+    border-left: 4px solid var(--nuz-success-color, #16a34a);
+}
+
+.nuz-toast-error {
+    border-left: 4px solid var(--nuz-danger-color, #dc2626);
+}
+
+.nuz-toast-warning {
+    border-left: 4px solid var(--nuz-warning-color, #d97706);
+}
+
+.nuz-toast-info {
+    border-left: 4px solid var(--nuz-info-color, #2563eb);
+}
+
+.nuz-toast-message {
+    flex: 1;
+    color: var(--nuz-text-color, #1f2937);
+}
+
+.nuz-toast-close {
+    background: none;
+    border: none;
+    color: var(--nuz-text-muted, #6b7280);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuz-toast-close:hover {
+    color: var(--nuz-text-color, #1f2937);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Empty States */
+.nuz-no-data {
+    text-align: center;
+    color: var(--nuz-text-muted, #6b7280);
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] {
+    --nuz-card-bg: #1f2937;
+    --nuz-bg-secondary: #374151;
+    --nuz-text-color: #f9fafb;
+    --nuz-text-muted: #9ca3af;
+    --nuz-border-color: #4b5563;
+}
+
+[data-theme="dark"] .nuz-loading-overlay {
+    background: rgba(31, 41, 55, 0.9);
+}
+
+[data-theme="dark"] .nuz-toast {
+    background: var(--nuz-card-bg, #1f2937);
+    color: var(--nuz-text-color, #f9fafb);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .nuz-dashboard-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nuz-dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .nuz-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .nuz-quick-actions {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .nuz-status-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .nuz-chart-container {
+        height: 250px;
+    }
+    
+    .nuz-table {
+        font-size: 0.85rem;
+    }
+    
+    .nuz-table th,
+    .nuz-table td {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nuz-dashboard-title {
+        font-size: 1.5rem;
+    }
+    
+    .nuz-stat-card {
+        padding: 1rem;
+    }
+    
+    .nuz-stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .nuz-stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .nuz-chart-container {
+        height: 200px;
+    }
+    
+    .nuz-toast {
+        min-width: 250px;
+        margin-right: 10px;
+    }
+    
+    .nuz-toast-container {
+        right: 10px;
+        left: 10px;
+    }
+}
